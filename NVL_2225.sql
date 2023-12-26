@@ -147,6 +147,22 @@ insert into LieuTrinh
 values (1,6,N'Bắt buộc','VC00001'),
 	(1,7,N'Bắt buộc','VC00001')
 select *from dbo.LieuTrinh
+
+
+-- UPDATE 
+-- Câu lệnh tắt identity
+SET IDENTITY_INSERT LieuTrinh OFF;
+
+-- Insert giá trị mới
+INSERT INTO LieuTrinh (idLT, soThangTuoiToiThieu, soThangTuoiToiDa, mucDo, idVC)
+VALUES 
+    (22225, 6, 12, N'Bắt buộc', 'VC00002'), -- Dòng 1
+    (2222556, 18, 24, N'Tùy Chọn', 'VC00003'); -- Dòng 2
+
+-- Mở lại identity
+SET IDENTITY_INSERT LieuTrinh ON;
+select * From dbo.LieuTrinh
+
 	----------------------
 
 -- Câu 3:
